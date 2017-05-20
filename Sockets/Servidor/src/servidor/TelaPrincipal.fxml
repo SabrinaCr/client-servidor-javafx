@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="534.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="servidor.TelaPrincipalController">
+   <left>
+      <VBox prefHeight="534.0" prefWidth="174.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btAbrir" mnemonicParsing="false" onAction="#clkBtAbrir" prefHeight="50.0" prefWidth="175.0" text="Abrir Conexões">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btFechar" mnemonicParsing="false" onAction="#clkBtFechar" prefHeight="50.0" prefWidth="185.0" text="Fechar Conexões">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSair" mnemonicParsing="false" onAction="#clkBtSair" prefHeight="50.0" prefWidth="176.0" text="Sair">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lbStatus" text="OK" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <SplitPane dividerPositions="0.28618968386023297" prefHeight="534.0" prefWidth="534.0" BorderPane.alignment="CENTER">
+        <items>
+            <ListView fx:id="list" onMouseClicked="#clkLista" prefHeight="532.0" prefWidth="135.0" />
+            <TableView fx:id="tabela" prefHeight="532.0" prefWidth="444.0">
+              <columns>
+                <TableColumn fx:id="colIp" prefWidth="119.0" text="IP" />
+                  <TableColumn fx:id="tcsPorta" prefWidth="104.0" text="Porta" />
+                  <TableColumn fx:id="tcsNome" prefWidth="170.0" text="Nome" />
+                <TableColumn fx:id="colMens" prefWidth="192.0" text="Mensagem" />
+              </columns>
+            </TableView>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
